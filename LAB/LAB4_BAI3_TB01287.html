@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #746a6a;
+        }
+        .box{
+            width: 500px;
+            height: 200px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            width: 300px;
+            height: 50px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .button_group{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        button{
+            width:100px;
+            height: 50px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+</style>
+<body>
+    <div class="box">
+        <input type="text" id="input" placeholder="ABC">
+<div class="buton_group">
+        <button onclick="tangkichthuoc()">size</button>    
+        <button onclick="doimau()">color</button>
+        <button onclick="doinen()">backgroundcolor</button>
+</div>
+
+    </div>
+    <script>
+let ob = document.getElementsByTagName("input");
+
+function tangkichthuoc() {
+    ob[0].style.fontSize = "50px";
+}
+
+function doimau() {
+    ob[0].style.color = "red";
+}
+
+function doinen() {
+    ob[0].style.backgroundColor = "blue";
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .box1,.box2{
+        width: 200px;
+        height: 200px;
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 100%;
+    }
+    .box1{
+        background-color: green;
+    }
+    .box2{
+        background-color: orange;
+    }
+
+
+
+</style>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script>
+        let ob=document.getElementsByTagName("div");
+        // console.log(ob);
+        //thay ĐỔI MÀU NỀN
+        ob[1].style.backgroundColor="red";
+        
+    </script>
+
+</body>
+</html>

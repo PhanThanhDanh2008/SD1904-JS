@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        color: #333;
+        padding: 20px;
+    }
+
+    #demo {
+        font-weight: bold;
+        color: #FF5733;
+    }
+</style>
+<body>
+    <p id="demo"></p>
+    <script>
+        //viết hàm a,b là tham số truyền vào hàm
+        //hàm trả về giá trị a+b
+        function tinhtong(a, b) {
+            return a + b;
+
+        }
+        //gọi hàm tinhtong với tham số 
+        let a =prompt("Nhập a: ");
+        a=Number(a); //chuyển đổi kiểu dữ liệu từ string sang number
+        let b =prompt("Nhập b: ");
+        b=Number(b); //chuyển đổi kiểu dữ liệu từ string sang number
+        let sum = tinhtong(a, b);
+        //hiển thị kết quả
+        // alert("Tổng  là: " + sum);
+        document.getElementById("demo").innerHTML = "Tổng là: " + sum;
+
+    </script>
+</body>
+</html>

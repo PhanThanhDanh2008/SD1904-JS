@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: beige;
+
+    }
+    #box{
+        width: 500px;
+        height: 500px;
+        border-radius: 100%;
+        margin-top: 150px;
+        margin-left: 250px;
+
+    }
+    #Img{
+        width: 600px;
+        height: 600px;
+        margin-top: 10px;
+        border-radius: 5%;
+    }
+    button{
+        width: 350px;
+        height: 80px;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-left: 17%;
+        cursor: pointer;
+        background-color: blanchedalmond;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <img id="Img" src="https://scontent.fsgn2-10.fna.fbcdn.net/v/t1.15752-9/496514265_608978945530127_7325498692477648061_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeH7vLwwXgHl4gbjYOnmh6d8_PmJqk_Z1OL8-YmqT9nU4pJh4fHAJndH6vI4bvHh7a5YrV4DeHViAPMF-H1mMUYp&_nc_ohc=E_6KHM6CwREQ7kNvwGBGGmy&_nc_oc=AdlFaFUtBl34Y7HfeT4sDlzXX7FUg6O0NuBvtzjWu9IbbnKOauT51oKgszwcZa2LIvY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsgn2-10.fna&oh=03_Q7cD2QF6MadniCb1_iEg4Cyjb6PLc-ePdO2dcZ_rtlT4MoZrtQ&oe=684BA9FA" alt="Player" width="250">
+        <br>
+        <button onclick="change()">Change pic</button>
+    </div>
+    <script>
+        function change() {
+            // Lấy đối tượng ảnh
+            let ob = document.getElementById("Img");
+            // Kiểm tra src hiện tại và đổi ảnh
+            if (ob.src == "https://scontent.fsgn2-10.fna.fbcdn.net/v/t1.15752-9/496514265_608978945530127_7325498692477648061_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeH7vLwwXgHl4gbjYOnmh6d8_PmJqk_Z1OL8-YmqT9nU4pJh4fHAJndH6vI4bvHh7a5YrV4DeHViAPMF-H1mMUYp&_nc_ohc=E_6KHM6CwREQ7kNvwGBGGmy&_nc_oc=AdlFaFUtBl34Y7HfeT4sDlzXX7FUg6O0NuBvtzjWu9IbbnKOauT51oKgszwcZa2LIvY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsgn2-10.fna&oh=03_Q7cD2QF6MadniCb1_iEg4Cyjb6PLc-ePdO2dcZ_rtlT4MoZrtQ&oe=684BA9FA"){
+            ob.src = "https://scontent.fsgn2-9.fna.fbcdn.net/v/t1.15752-9/495074441_1216688366613146_321500295065699350_n.jpg?stp=dst-jpg_p480x480_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEWISQd3_AUjPLdXVnlemLlPHhjlLpgu8Q8eGOUumC7xNpwhfvNq30zUgZlTZvz_LsIrW_AFHUU92BKYlPBDQaF&_nc_ohc=xuLi7P71We0Q7kNvwFtCEJV&_nc_oc=Adnd2Nshk4XO9bRCqucrLcSTIzKeq8V1P_-5GmPTbQIum1ctoKWyXuJ7lqmJU9SVAjk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsgn2-9.fna&oh=03_Q7cD2QFUoNsVjiE3jMM4-pUutHS74914oenNF8hXHP1ykLfumQ&oe=684BA4C3";
+
+           } else {
+                ob.src = "https://scontent.fsgn2-10.fna.fbcdn.net/v/t1.15752-9/496514265_608978945530127_7325498692477648061_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeH7vLwwXgHl4gbjYOnmh6d8_PmJqk_Z1OL8-YmqT9nU4pJh4fHAJndH6vI4bvHh7a5YrV4DeHViAPMF-H1mMUYp&_nc_ohc=E_6KHM6CwREQ7kNvwGBGGmy&_nc_oc=AdlFaFUtBl34Y7HfeT4sDlzXX7FUg6O0NuBvtzjWu9IbbnKOauT51oKgszwcZa2LIvY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsgn2-10.fna&oh=03_Q7cD2QF6MadniCb1_iEg4Cyjb6PLc-ePdO2dcZ_rtlT4MoZrtQ&oe=684BA9FA";
+            }
+                
+
+        }
+    </script>
+</body>
+</html>

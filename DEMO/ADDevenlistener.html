@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1> AN EXAMPLE ABOUT USING ADDEVENLISTENER MET HOD</h1>
+  <button> i am a button </button>  
+  <p id="result"></p>
+  <script>
+    let button = document.querySelector('button');
+    button.addEventListener("mouseover",f_mouseover);
+    function f_mouseover(){
+        //lay doi tuong hien thi ket ca
+        let ob=document.getElementById('result');
+        ob.innerHTML+=" mao l <br>";
+
+    }
+    
+    button.addEventListener("mouseout",f_mouseout);
+    function f_mouseout(){
+        //lay doi tuong hien thi ket ca
+        let ob=document.getElementById('result');
+        ob.innerHTML+=(" l mao <br>")
+    }
+    button.addEventListener("click",f_click);
+    function f_click(){
+        let ob=document.getElementById('result');
+        ob.innerHTML+=("con le le <br>")
+    }
+    
+  </script>
+</body>
+</html>

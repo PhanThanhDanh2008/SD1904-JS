@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .box_menu {
+        width: 600px;
+        height: 300px;
+        background-color: #ccc;
+        border: 1px solid black;
+        margin: 10px;
+    }
+    .box_trai {
+        width: 300px;
+        height: 50px;
+        background-color: #ccc;
+    }
+    .box_phai {
+        width: 300px;
+        height: 200px;
+        background-color: #ccc;
+        margin-left: 300px;
+        margin-top: -50px;
+        border-left: 3px dashed black;
+
+
+    }
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        margin-top: 40px;
+        margin-left: 80px;
+        font-size: 16px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #158a49;
+    }
+    input {
+        width: 200px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 20px;
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    p {
+        color: red;
+        font-size: 20px;
+        margin: 10px;
+
+    }
+
+</style>
+<body>
+    <div class="box_menu">
+        <div class="box_trai">
+        Món <input type="text" id="mon" placeholder="nhập món ăn">
+        <button onclick="themmon()">thêm món</button>        
+        </div>
+        <div class="box_phai">
+            <h1>bạn đã chọn</h1>
+        </div>
+    </div>
+    <script>
+        function themmon() {
+            let mon = document.getElementById("mon").value;
+            let new_node = document.createElement('p');
+            let text_node = document.createTextNode(mon);
+            new_node.appendChild(text_node);
+            let ob= document.querySelector(".box_phai");
+            ob.appendChild(new_node);
+            document.getElementById("mon").value = "";
+        }
+    </script>
+</body>
+</html>

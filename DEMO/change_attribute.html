@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #box{
+        width: 500px;
+        height: 500px;
+        background-color: green;
+        margin-top: 20px;
+        border-radius: 100%;
+    }
+    button{
+        margin-top: 10px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="box">
+        <button onclick="change()">Change color</button>
+    </div>
+    <script>
+        function change() {
+            //lấy đối tượng 
+            let ob=document.getElementById("box");
+            if(ob.style.backgroundColor==("green")){
+                ob.style.backgroundColor="red";
+            }else{
+                ob.style.backgroundColor="green";
+            }
+        }
+    </script>
+</body>
+</html>

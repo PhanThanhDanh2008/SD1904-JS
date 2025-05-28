@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #box {
+        width: 600px;
+        height: 300px;
+        border: 1px solid black;
+        margin-top: 50px;
+
+    }
+</style>
+<body>
+    <div id="box">
+        <P id="p1">NỘI DUNG 1</P>
+        <P id="p2">NỘI DUNG 2</P>
+    </div>
+    <button>add</button>
+    <script>
+        // lấy đối tượng button
+        let ob=document.querySelector("button");
+        var number =3 ;
+        console.log(ob);
+        ob.onclick=function(){
+            let new_node=document.createElement("p");
+            let text_node=document.createTextNode("NỘI DUNG  "+ number );
+            new_node.appendChild(text_node);
+             let ob =document.getElementById("box");
+            ob.appendChild(new_node);
+            number++;
+            console.log(new_node);
+        }
+    </script>
+</body>
+</html>

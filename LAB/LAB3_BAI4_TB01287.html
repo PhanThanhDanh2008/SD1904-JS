@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image: url("https://hoanghamobile.com/tin-tuc/wp-content/uploads/2023/09/hinh-nen-vu-tru-28.jpg");
+        background-size: cover; /* Hình nền phủ toàn màn hình */
+        background-position: center; /* Căn giữa hình nền */
+        background-repeat: no-repeat;
+    }
+    .box{
+        width: 500px;
+        height: 500px;
+        border-radius: 10px;
+        background-color: transparent;        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        margin-bottom: 20px;
+        color: azure;
+    }
+    h2{
+        margin: 10px 0;
+        color: white;
+    }
+    input{
+        width: 80%;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+   #eye{
+        position: absolute;
+        margin-left: 360px;
+        margin-top: 195px;
+        cursor: pointer;
+    }
+    #user{
+        position: absolute;
+        margin-left: 360px;
+        margin-top: -25px;
+    }
+
+    
+</style>
+<body>
+    <div class="box">
+        <h1>LOGIN FORM</h1>
+        <h2>Account:</h2>
+        <input type="text" placeholder="Enter your account" />
+        <i id="user" class="fas fa-user" style="color: #B197FC;"></i>
+        <h2>Password:</h2>
+        <input type="password" placeholder="Enter your password" />
+        <i id="eye" class="far fa-eye" style="color: #B197FC;"></i>
+      
+    </div>
+    <script>
+        let eye = document.querySelector(".fa-eye");
+        let password = document.querySelector("input[type='password']");
+
+        eye.addEventListener("click", function() {
+            if (password.type === "password") {
+                password.type = "text";
+                eye.classList.remove("fa-eye");
+                eye.classList.add("fa-eye-slash");
+            } else {
+                password.type = "password";
+                eye.classList.remove("fa-eye-slash");
+                eye.classList.add("fa-eye");
+            }
+        });
+    </script>
+    
+</body>
+</html>

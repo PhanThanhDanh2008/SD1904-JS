@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển Thị Ảnh</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 1000px;
+            height: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: beige;
+            margin: 0 auto;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        #anh1, #anh2 {
+            cursor: pointer;
+        }
+        #anh1 img, #anh2 img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* Đảm bảo ảnh đồng đều, không méo */
+        }
+        #box_hien_anh {
+            border: 2px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #box_hien_anh img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function showImage1() {
+            let displayImg = document.getElementById('display-img');
+            let anh1Img = document.getElementById('anh1').querySelector('img');
+            let imgSrc = anh1Img.getAttribute('src');
+            displayImg.setAttribute('src', imgSrc);
+            displayImg.setAttribute('alt', 'Ảnh được chọn 1');
+        }
+
+        function showImage2() {
+            let displayImg = document.getElementById('display-img');
+            let anh2Img = document.getElementById('anh2').querySelector('img');
+            let imgSrc = anh2Img.getAttribute('src');
+            displayImg.setAttribute('src', imgSrc);
+            displayImg.setAttribute('alt', 'Ảnh được chọn 2');
+        }
+    </script>
+    <div id="box">
+        <div class="image-container">
+            <div id="anh1" onclick="showImage1()">
+                <img src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t1.15752-9/489731271_1821001838750389_5541283491744813245_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEdehVpCZtqNMjlC4qIoFl_9dwYJFjx4Mb13BgkWPHgxnW_6jxDcbyO3Q7zorKBopunOeIot_vLPiuji00m3bab&_nc_ohc=Q_HomrvAA-0Q7kNvwEDX4YN&_nc_oc=Adki0_Sc6K6PWqcacW6i56-qnoNEzPxDSYnL9y2hvYVc1RFwe0Vwmvx7r9VTVi4-bTI&_nc_zt=23&_nc_ht=scontent.fsgn2-9.fna&oh=03_Q7cD2QEgA_oY40oPwhmMOfyKquJVMde3h6baZHA2jxhHUdzacQ&oe=684924C8" alt="Ảnh 1">
+            </div>
+            <div id="anh2" onclick="showImage2()">
+                <img src="https://imgresizer.tntsports.io/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.tntsports.io/2025/04/08/4117595-83489548-2560-1440.jpg" alt="Ảnh 2">
+            </div>
+        </div>
+        <div id="box_hien_anh">
+            <img id="display-img" src="" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #mylist{
+        width: 200px;
+        height: 150px;
+        border: 2px solid black;
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    button{
+        max-width: 20px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <ul id="mylist">
+        <li id="myli">cafe</li>
+        <li>milk</li>
+        <li>tea</li>
+    </ul>
+    <button>show</button>
+    <script>
+        //lấy đối tượng 
+        let bt=document.querySelector('buton');
+        bt.onclick=function(){
+            //lấy 1 đối tuowng để tìm cha của nó
+            let ob =document.getElementById('myli');
+            // console.log(ob);
+            let father=ob.parentElement.nodeName;
+            alert(" tên npde cha là "+father);
+            
+        }
+    </script>
+</body>
+</html>

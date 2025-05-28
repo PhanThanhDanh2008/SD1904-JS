@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        #MyList {
+            width: 300px;
+            height: 200px;
+            list-style: none;
+            padding-left: 5px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            margin-top: 40px;
+            margin-left: 80px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #158a49;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="xoa()">xóa</button>
+    <ul id="MyList">
+        <li>Coffee</li>
+        <li>tung tung </li>
+        <li>Tea</li>
+        <li>Milk</li>
+        <li>Juice</li>
+        <li>Water</li>
+        <li>Beer</li>
+        <li>Wine</li>
+        <li>Whiskey</li>
+    </ul>
+    <script>
+            let bt =document.querySelector("button");
+            bt.onclick = function() {
+                let ob = document.getElementById("MyList");
+                    let list=document.getElementById("MyList");
+                    if (list.hasChildNodes()) {
+                        list.removeChild(list.children[0]);
+                        alert("thằng kiệt liệt dương");
+                    }
+                    else {
+                        alert("thằng kiệt liệt dương");
+                    }
+        }
+    </script>
+
+</body>
+</html>

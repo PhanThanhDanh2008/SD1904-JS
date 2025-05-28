@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(172, 172, 158);
+        }
+        #box{
+            width: 500px;
+            height: 500px;
+            background-color: beige;
+            border-radius: 5%;
+            margin-top: 150px;
+            margin-left: 20px;
+            border: 2px solid black;
+        }
+        #box_hien_mau{
+            width: 200px;
+            height: 200px;
+            border: 2px solid rgb(0, 0, 0);
+            margin: 20px;
+            margin-left: 150px;
+            margin-top: 40px;
+            background-color: white;
+            border-radius: 5%;
+        }
+        #box_mau {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        #box_xanh{
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            border-radius: 5%;
+            margin: 0 10px;
+            cursor: pointer;
+
+        }
+        #box_do{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 5%;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        #box_vang{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            border-radius: 5%;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        #box_tim{
+            width: 50px;
+            height: 50px;
+            background-color: purple;
+            border-radius: 5%;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>MÀU SẮC HIỆN THỊ TẠI ĐÂY</h1>
+        <div id="box_hien_mau"></div>
+        <div id="box_mau">
+            <div id="box_xanh" onclick="mauxanh()"></div>
+            <div id="box_do" onclick="maudo()"></div>
+            <div id="box_vang" onclick="mauvang()"></div>
+            <div id="box_tim" onclick="mautim()"></div>
+        </div>
+    </div>
+    <script>
+        function mauxanh() {
+            document.getElementById("box_hien_mau").style.backgroundColor = "green";
+        }
+        function maudo() {
+            document.getElementById("box_hien_mau").style.backgroundColor = "red";
+        }
+        function mauvang() {
+            document.getElementById("box_hien_mau").style.backgroundColor = "yellow";
+        }
+        function mautim() {
+            document.getElementById("box_hien_mau").style.backgroundColor = "purple";
+        }
+    </script>
+</body>
+</html>

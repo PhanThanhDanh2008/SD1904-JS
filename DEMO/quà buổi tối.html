@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hộp Quà Đêm Khuya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .gift-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 160px auto 0 auto;
+      cursor: pointer;
+    }
+
+    .box {
+      width: 100%;
+      height: 100%;
+      background: #064e3b;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 0;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .ribbon {
+      position: absolute;
+      width: 30px;
+      height: 100%;
+      background-color: #22c55e;
+      left: calc(50% - 15px);
+      z-index: 1;
+    }
+
+    .lid {
+      width: 100%;
+      height: 40px;
+      background: #065f46;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: -40px;
+      left: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+      transform-origin: center;
+      z-index: 2;
+    }
+
+    .lid.open {
+      transform: translateY(-80px) rotate(-20deg);
+      opacity: 0;
+    }
+
+    .bow {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 50px;
+      background: #22c55e;
+      border-radius: 50% 50% 0 0;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+      z-index: 5;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 28px;
+      color: #f0f9ff;
+    }
+
+    h1::after {
+      content: "🌙";
+      font-size: 40px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .message {
+      position: absolute;
+      top: 240px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: #e0f2fe;
+      opacity: 0;
+      z-index: 3;
+      font-family: 'Pacifico', cursive;
+      white-space: nowrap;
+    }
+
+    .message.show {
+      animation: appear 3s ease-in-out forwards;
+    }
+
+    @keyframes appear {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px) rotate(-5deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) rotate(0deg);
+      }
+    }
+
+    .stars {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+      opacity: 0.8;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* Nút bật/tắt nhạc */
+    .music-control {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: #22c55e;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Responsive cho điện thoại */
+    @media (max-width: 600px) {
+      .gift-container {
+        width: 220px;
+        height: 220px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .lid {
+        height: 45px;
+        top: -45px;
+      }
+
+      .bow {
+        width: 110px;
+        height: 55px;
+        top: -55px;
+      }
+
+      .message {
+        font-size: 22px;
+        top: 260px;
+      }
+    }
+
+    #background-music {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click mở hộp quà lúc đêm khuya 🌌💤</h1>
+
+  <button class="music-control" onclick="toggleMusic()">Tắt Nhạc</button>
+
+  <div class="stars" style="top: 40px; left: 20%; animation-delay: 0s;"></div>
+  <div class="stars" style="top: 100px; left: 60%; animation-delay: 0.5s;"></div>
+  <div class="stars" style="top: 200px; left: 80%; animation-delay: 1s;"></div>
+  <div class="stars" style="top: 300px; left: 40%; animation-delay: 1.2s;"></div>
+  <div class="stars" style="top: 400px; left: 70%; animation-delay: 0.8s;"></div>
+
+  <div class="gift-container" onclick="openGift()">
+    <div class="lid" id="lid">
+      <div class="bow"></div>
+    </div>
+    <div class="ribbon"></div>
+    <div class="box"></div>
+    <div class="message" id="message">Chúc nàng ngủ ngon nhóa 😴😪</div>
+  </div>
+
+  <iframe
+    id="background-music"
+    src="https://www.youtube.com/embed/vCqc2SQdEoM?autoplay=1&loop=1&playlist=vCqc2SQdEoM&mute=0"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    let opened = false;
+    let isMusicPlaying = true; // Nhạc bắt đầu phát ngay khi trang tải
+
+    function openGift() {
+      if (opened) return;
+      opened = true;
+
+      const lid = document.getElementById("lid");
+      const message = document.getElementById("message");
+      lid.classList.add("open");
+
+      setTimeout(() => {
+        message.classList.add("show");
+      }, 900);
+    }
+
+    function toggleMusic() {
+      const musicFrame = document.getElementById("background-music");
+      if (isMusicPlaying) {
+        musicFrame.src = "https://www.youtube.com/embed/vCqc2SQdEoM?autoplay=0&loop=1&playlist=vCqc2SQdEoM&mute=1";
+        document.querySelector(".music-control").textContent = "Bật Nhạc";
+      } else {
+        musicFrame.src = "https://www.youtube.com/embed/vCqc2SQdEoM?autoplay=1&loop=1&playlist=vCqc2SQdEoM&mute=0";
+        document.querySelector(".music-control").textContent = "Tắt Nhạc";
+      }
+      isMusicPlaying = !isMusicPlaying;
+    }
+
+    // Thử kích hoạt autoplay ngay khi trang tải
+    window.addEventListener('load', () => {
+      const musicFrame = document.getElementById("background-music");
+      musicFrame.src = "https://www.youtube.com/embed/vCqc2SQdEoM?autoplay=1&loop=1&playlist=vCqc2SQdEoM&mute=0";
+    });
+  </script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93c9e2783b69adc5',t:'MTc0NjcxNzAzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

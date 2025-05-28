@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" >
+    <button onclick="kiemtra()">Check</button>
+</body>
+<script>
+    function kiemtra()
+    {
+        //lấy đối tượng
+        let ob=document.querySelector("input");
+        //kiểm tra lấy được đối tượng chưa
+        console.log(ob);
+        if(ob.hasAttribute("id")){
+            alert("có thuộc tính cần tìm");
+
+        }else{
+            alert("không có thuộc tính cần tìm");
+        }
+    }
+</script>
+</html>

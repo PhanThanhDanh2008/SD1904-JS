@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#box {
+    width: 240px;
+    height: 180px;
+    border: 2px solid #007BFF;
+    margin-top: 20px;
+    border-radius: 16px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: box-shadow 0.3s;
+}
+
+img {
+    width: 140px;
+    height: 90px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+}
+p {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #007BFF;
+    font-weight: bold;
+}
+button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+button:hover {
+    background: #d9363e;
+}
+
+</style>
+<body>
+    <div id="box">
+        <p id="mypicture"> ảnh của tôi</p>
+        <img src="/IMG/1.jpg" alt="">
+        <button>X</button>
+    </div>
+    <script>
+        let bt=document.querySelector('button');
+        bt.onclick=function(){
+        let ob=document.getElementById('box');
+        let father=ob.parentElement;
+         father.style.display='none';
+
+            
+            
+        }
+    </script>
+    
+</body>
+</html>

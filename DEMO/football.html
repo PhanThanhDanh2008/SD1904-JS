@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <h1> người ấy là ai</h1>
+        
+        <button id="MESSI" onclick="who">MESSI</button>
+        <button id="RONALDO" onclick="who" >RONALDO</button>
+        <div class="box_pic">
+
+        </div>
+    </div>
+    
+
+    <script>
+        function player(who){
+            if(who == "MESSI"){
+                document.querySelector(".box_pic").innerHTML = "<img src='https://cdn.britannica.com/24/192424-050-0A2F1B5E/Lionel-Messi-2022.jpg' alt='messi'>";
+            }else if(who == "RONALDO"){
+                document.querySelector(".box_pic").innerHTML = "<img src='https://cdn.britannica.com/94/194594-050-0A2F1B5E/Cristiano-Ronaldo-2022.jpg' alt='ronaldo'>";
+            }else{
+                document.querySelector(".box_pic").innerHTML = "<img src='https://cdn.britannica.com/94/194594-050-0A2F1B5E/Cristiano-Ronaldo-2022.jpg' alt='ronaldo'>";
+            }
+        }
+    </script>
+</body>
+</html>

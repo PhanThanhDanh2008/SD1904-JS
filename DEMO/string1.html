@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #demo {
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+            background-color: lightblue;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: blue;
+            
+        }
+    </style>
+</head>
+<body>
+    <p id = "demo"></p>
+    <script>
+        let st="I am not a robot.";
+        // console.log(st);
+        document.getElementById("demo").innerHTML = st;
+    </script>
+    
+</body>
+</html>

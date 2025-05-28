@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+    }
+    #box {
+        width: 600px;
+        height: 300px;
+        background-color: #ccc;
+        border: 1px solid black;
+        margin: 10px;
+    }
+    #box_trai {
+        width: 200px;
+        height: 150px;
+        background-color: #3a1b60;
+        border: 1px solid black;
+        margin-top: 50px;
+        
+    }
+    #box_phai {
+        width: 200px;
+        height: 150px;
+        background-color: #711933;
+        margin-left: 400px;
+        margin-top: -150px;
+        border: 1px solid black;
+
+    }
+    #boxtrai {
+        list-style: none;
+    }
+    #boxphai  {
+        list-style: none;
+    }
+
+    button {
+        height: 50px;
+        width: 100px;
+        background-color: #007BFF;
+        margin-top: 40px;
+        margin-left: 250px;
+        font-size: 16px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #158a49;
+    }
+    li {
+        margin-top: 10px;
+        margin-left: 20px;
+        color: tomato;
+    }
+</style>
+<body>
+<div id="box">
+    <div id="box_trai">
+       <ul id="boxtrai">
+        <li>cam</li>
+        <li>chanh</li>
+        <li>du du</li>
+       </ul>
+    </div>
+    <div id="box_phai">
+        <ul id="boxphai">
+
+        </ul>
+    </div>
+    <button>click</button>
+</div>
+<script>
+let bt = document.querySelector("button");
+        
+        bt.onclick = function(){
+            let box_trai = document.getElementById("boxtrai");
+            let box_phai = document.getElementById("boxphai");
+            if(box_trai.hasChildNodes()){
+                
+                let firstChild = box_trai.firstChild;
+                box_phai.appendChild(firstChild);
+            }
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+    <div class="box">
+        <p id="p1">content1</p>
+        <p id="p2">content2</p>
+    </div>
+    <script>
+        //tạo 1 thành phần mới
+        let new_node = document.createElement('p');
+        //tạo nội dung cho thành phần mới
+        let text_node = document.createTextNode('content3');
+        //gắn nội dung cho thành phần mới
+        new_node.appendChild(text_node);
+        //lấy đối tượng box
+        let ob= document.querySelector("div");
+        //gắn node mới vào ob
+        ob.appendChild(new_node);
+    </script>
+
+</body>
+</html>
