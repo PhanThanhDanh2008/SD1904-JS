@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    .mystyle{
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        background-color: lightblue;
+        color: red;
+        text-align: center;
+        line-height: 200px;
+        
+    }
+</style>
+<body>
+    <div id="box">
+        <p>I am My classList</p>
+    </div>
+    <button  onclick="">Add Class</button>
+
+    <script>
+        // lấy đối tượng  để viết sự kiện 
+        let bt=document.querySelector("button");
+        bt.onclick=function(){
+            // lấy đối tượng cần thêm class
+            let list=document.getElementById("box");
+            // thêm class vào đối tượng
+            list.classList.add("mystyle");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #box {
+        width: 300px;
+        height: 300px;
+        border: 2px solid black;
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+    #menu {
+        list-style-type: none;
+        padding: 10px;
+    }
+    #menu li {
+        padding: 10px;
+        background-color: #caadad;
+        margin: 5px 0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+    }
+    #menu li:hover {
+        background-color: #8b5a5a;
+        transform: scale(1.05);
+
+    }
+    li {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <div id="box">
+    <ul id="menu" onclick="menu(event)">
+        <li>sĩ vương hạt nhài</li>
+        <li>cường cương cứng</li>
+        <li>cường hạt nhài</li>
+
+    </ul>
+    </div>
+
+    <script>
+        function menu(event) {
+            let current_ob = event.target;
+            event.target.style.display = "none";
+            
+        }
+    </script>
+</body>
+</html>
